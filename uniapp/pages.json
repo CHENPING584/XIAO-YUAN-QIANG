@@ -1,0 +1,68 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "校园墙",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/post/add",
+			"style": {
+				"navigationBarTitleText": "发布投稿"
+			}
+		},
+		{
+			"path": "pages/post/detail",
+			"style": {
+				"navigationBarTitleText": "投稿详情"
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/my/posts",
+			"style": {
+				"navigationBarTitleText": "我的投稿",
+				"enablePullDownRefresh": true
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "校园墙",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/post/add",
+				"iconPath": "static/tabbar/add.png",
+				"selectedIconPath": "static/tabbar/add-active.png",
+				"text": "发布"
+			},
+			{
+				"pagePath": "pages/my/index",
+				"iconPath": "static/tabbar/me.png",
+				"selectedIconPath": "static/tabbar/me-active.png",
+				"text": "我的"
+			}
+		]
+	}
+}

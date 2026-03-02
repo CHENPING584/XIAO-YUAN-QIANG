@@ -1,0 +1,34 @@
+# Dependencies
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+.env.*.local
+
+# Uniapp
+unpackage/
+.hbuilderx/
+
+# Temp
+tmp/
+temp/
