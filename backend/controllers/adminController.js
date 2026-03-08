@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 exports.login = async (req, res) => {
     const { username, password } = req.body;
     // Mock admin credentials
-    if (username === 'admin' && password === 'admin123') {
+    if (username === '3164738732' && password === '3164738732XC') {
         const token = jwt.sign({ id: 0, role: 'admin' }, process.env.JWT_SECRET || 'secret', { expiresIn: '1d' });
         res.json({ token, role: 'admin' });
     } else {
