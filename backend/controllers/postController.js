@@ -62,7 +62,7 @@ exports.getPostDetail = async (req, res) => {
 };
 
 exports.createPost = async (req, res) => {
-    const { category_id, content, images, contact_info, is_anonymous } = req.body;
+    const { category_id, content, images, contact_info, is_anonymous, price } = req.body;
     const userId = req.user.id; // From middleware
 
     try {
@@ -72,8 +72,8 @@ exports.createPost = async (req, res) => {
         }
 
         const [result] = await db.query(
-            'INSERT INTO posts (user_id, category_id, content, images, contact_info, is_anonymous) VALUES (?, ?, ?, ?, ?, ?)',
-            [userId, category_id, content, JSON.stringify(images || []), contact_info, is_anonymous ? 1 : 0]
+            'INSERT INTO posts (user_id, category_id, content, images, contact_info, is_anonymous, price) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            [userId, category_id, content, JSON.stringify(images || []), contact_info, is_anonymous ? 1 : 0, price || null]
         );
         
         res.json({ id: result.insertId, message: 'Post submitted for review' });

@@ -25,6 +25,10 @@
 				</view>
 			</picker>
 		</view>
+
+		<view class="form-item" v-if="categories[categoryIndex] && categories[categoryIndex].type === 'trade'">
+			<input type="digit" v-model="price" placeholder="请输入价格 (元)" class="input-price" />
+		</view>
 		
 		<view class="form-item switch-row">
 			<text>匿名发布</text>
@@ -45,7 +49,8 @@
 				images: [],
 				categories: [],
 				categoryIndex: -1,
-				isAnonymous: false
+				isAnonymous: false,
+				price: ''
 			}
 		},
 		onLoad() {
@@ -111,7 +116,8 @@
 							category_id: this.categories[this.categoryIndex].id,
 							content: this.content,
 							images: this.images,
-							is_anonymous: this.isAnonymous
+							is_anonymous: this.isAnonymous,
+							price: this.price
 						}
 					});
 					
@@ -141,8 +147,14 @@
 	}
 	.textarea {
 		width: 100%;
-		height: 120px;
-		font-size: 16px;
+		height: 150px;
+		font-size: 15px;
+	}
+	.input-price {
+		width: 100%;
+		height: 40px;
+		font-size: 15px;
+		border-bottom: 1px solid #eee;
 	}
 	.word-count {
 		text-align: right;

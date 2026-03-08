@@ -13,6 +13,10 @@
 				<text>{{ post.content }}</text>
 			</view>
 			
+			<view class="price-tag" v-if="post.price">
+				<text>¥ {{ post.price }}</text>
+			</view>
+
 			<view class="images" v-if="post.images && post.images.length">
 				<image v-for="(img, idx) in post.images" :key="idx" :src="img" mode="widthFix" class="post-img" @click="previewImage(idx)"></image>
 			</view>
@@ -138,8 +142,14 @@
 	}
 	.post-detail {
 		background: #fff;
-		padding: 15px;
-		margin-bottom: 10px;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+	.price-tag {
+		color: #ff4d4f;
+		font-size: 20px;
+		font-weight: bold;
+		margin: 10px 0;
 	}
 	.header {
 		display: flex;

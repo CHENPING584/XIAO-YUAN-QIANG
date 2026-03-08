@@ -29,7 +29,9 @@ INSERT INTO `categories` (`name`, `type`, `sort_order`) VALUES
 ('表白墙', 'love', 1),
 ('失物招领', 'lost', 2),
 ('校园互助', 'help', 3),
-('树洞吐槽', 'hole', 4);
+('树洞吐槽', 'hole', 4),
+('二手闲置', 'trade', 5),
+('校园资讯', 'news', 6);
 
 -- 3. 投稿内容表 (Posts)
 CREATE TABLE `posts` (
@@ -47,6 +49,7 @@ CREATE TABLE `posts` (
   `likes` INT DEFAULT 0 COMMENT '点赞数',
   `comments_count` INT DEFAULT 0 COMMENT '评论数',
   `is_top` TINYINT DEFAULT 0 COMMENT '是否置顶: 1-是, 0-否',
+  `price` DECIMAL(10,2) DEFAULT NULL COMMENT '价格(二手交易用)',
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',
   `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,

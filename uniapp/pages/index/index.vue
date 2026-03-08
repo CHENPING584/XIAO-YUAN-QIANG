@@ -27,6 +27,9 @@
 				<view class="content">
 					<text>{{ item.content }}</text>
 				</view>
+				<view class="price-tag" v-if="item.price">
+					<text>¥ {{ item.price }}</text>
+				</view>
 				<view class="images" v-if="item.images && item.images.length">
 					<image v-for="(img, idx) in item.images" :key="idx" :src="img" mode="aspectFill" class="post-img"></image>
 				</view>
@@ -147,6 +150,12 @@
 		background: #fff;
 		margin-bottom: 10px;
 		padding: 15px;
+	}
+	.price-tag {
+		color: #ff4d4f;
+		font-size: 18px;
+		font-weight: bold;
+		margin: 5px 0;
 	}
 	.header {
 		display: flex;
