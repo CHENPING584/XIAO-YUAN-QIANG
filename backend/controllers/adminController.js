@@ -3,8 +3,11 @@ const jwt = require('jsonwebtoken');
 
 exports.login = async (req, res) => {
     const { username, password } = req.body;
-    // Mock admin credentials
-    if (username === '3164738732' && password === '3164738732XC') {
+    // Mock admin credentials (SHA256 hashes)
+    // Username: 3164738732 -> 2afd4a4107393a262e0d03c09abae863cf8f0b4f34d0cc0b08b33d11663bd46c
+    // Password: 3164738732XC -> 9cf465d71543eeb5065a7f1f80c862a045641baae6ac0942902a255a5a0d823f
+    if (username === '2afd4a4107393a262e0d03c09abae863cf8f0b4f34d0cc0b08b33d11663bd46c' && 
+        password === '9cf465d71543eeb5065a7f1f80c862a045641baae6ac0942902a255a5a0d823f') {
         const token = jwt.sign({ id: 0, role: 'admin' }, process.env.JWT_SECRET || 'secret', { expiresIn: '1d' });
         res.json({ token, role: 'admin' });
     } else {

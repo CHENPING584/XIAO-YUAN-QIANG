@@ -7,9 +7,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "element-plus": "^2.3.9",
     "axios": "^1.4.0",
+    "crypto-js": "^4.2.0",
+    "element-plus": "^2.3.9",
+    "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {

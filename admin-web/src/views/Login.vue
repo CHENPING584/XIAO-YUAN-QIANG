@@ -26,6 +26,7 @@ import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
+import SHA256 from 'crypto-js/sha256'
 
 const router = useRouter()
 const loading = ref(false)
@@ -39,7 +40,13 @@ const login = async () => {
   
   loading.value = true
   try {
-    const res = await axios.post('/api/admin/login', form)
+    // Encrypt username and password before sending
+    const encryptedData = {
+      username: SHA256(form.username).toString(),
+      password: SHA256(form.password).toString()
+    }
+    
+    const res = await axios.post('/api/admin/login', encryptedData)
     localStorage.setItem('token', res.data.token)
     ElMessage.success('登录成功')
     router.push('/')

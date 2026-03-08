@@ -78,7 +78,7 @@
 						const tempFilePaths = res.tempFilePaths;
 						tempFilePaths.forEach((path) => {
 							uni.uploadFile({
-								url: 'http://localhost:3001/api/upload',
+								url: 'http://localhost:3000/api/upload',
 								filePath: path,
 								name: 'file',
 								header: {

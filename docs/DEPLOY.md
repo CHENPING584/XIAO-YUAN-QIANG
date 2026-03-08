@@ -57,7 +57,7 @@
      ```bash
      npm start
      ```
-   - 服务将运行在 `http://localhost:3001`
+   - 服务将运行在 `http://localhost:3000`
 
 ## 3. 管理后台部署 (admin-web)
 
